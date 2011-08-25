@@ -1,0 +1,16 @@
+Hello and Welcome to RemoteCommand. A very simple BASH script to run commands to
+multiple machines from one box.
+
+To get started I would set up a user on each remote machine. If you are using
+CentOS you would run this as Root:
+
+[root@cluster01.lax ~]$ /usr/sbin/adduser -d /home/user_name -m -s /bin/bash user_name && passwd user_user
+
+Next, log out and go back to the box with RemoteCommand on it and do this:
+
+[user_name@deploybox ~]$ ssh-copy-id -i .ssh/id_rsa.pub cluster01.lax.example.com
+
+You can then run RemoteCommand.bash:
+
+chmod +x RemoteCommand.bash
+./RemoteCommand.bash
